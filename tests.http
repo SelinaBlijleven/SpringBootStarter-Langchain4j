@@ -1,0 +1,8 @@
+### Call /model with explicit message
+GET http://localhost:8080/model?message=Hello
+Accept: text/plain
+
+
+### Call /model using default message
+GET http://localhost:8080/model
+Accept: text/plain
