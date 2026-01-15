@@ -18,7 +18,6 @@ import org.springframework.context.annotation.Primary;
 @Getter
 @Setter
 public class MistralDefaultsProperties {
-
     private String modelName;
     private String apiKey;
 }

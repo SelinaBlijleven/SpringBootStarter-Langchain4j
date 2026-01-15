@@ -19,7 +19,6 @@ import org.springframework.context.annotation.Configuration;
 @Getter
 @Setter
 public class OllamaDefaultsProperties extends LangChainDefaultsProperties {
-
     String modelName;
     String baseUrl;
 }
