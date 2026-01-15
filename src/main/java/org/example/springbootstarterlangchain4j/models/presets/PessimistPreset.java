@@ -17,15 +17,13 @@ public class PessimistPreset extends DefaultModelPreset {
      */
     public PessimistPreset(LangChainDefaultsProperties properties) {
         super(properties);
+
+        // Set the system prompt to use for the pessimist.
+        systemPrompt = loadPrompt("prompts/system/pessimist.txt");
     }
 
     @Override
     public String name() {
         return "Pessimist";
-    }
-
-    @Override
-    public String systemPrompt() {
-        return loadPrompt("prompts/system/pessimist.txt");
     }
 }
