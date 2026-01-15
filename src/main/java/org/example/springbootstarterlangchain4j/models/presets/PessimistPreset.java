@@ -1,12 +1,14 @@
 /**
  * PessimistPreset.java
  * <p>
- * Create an pessimistic agent using some defaults and a custom name & system prompt.
+ * Create a pessimistic agent using some defaults and a custom name & system prompt.
  */
 package org.example.springbootstarterlangchain4j.models.presets;
 
 import org.example.springbootstarterlangchain4j.config.LangChainDefaultsProperties;
+import org.springframework.stereotype.Component;
 
+@Component
 public class PessimistPreset extends DefaultModelPreset {
 
     /**

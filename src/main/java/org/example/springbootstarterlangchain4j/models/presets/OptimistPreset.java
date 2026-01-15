@@ -8,7 +8,9 @@
 package org.example.springbootstarterlangchain4j.models.presets;
 
 import org.example.springbootstarterlangchain4j.config.LangChainDefaultsProperties;
+import org.springframework.stereotype.Component;
 
+@Component
 public class OptimistPreset extends DefaultModelPreset {
 
     /**
