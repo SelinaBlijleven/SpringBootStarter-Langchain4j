@@ -1,9 +1,12 @@
-
 package org.example.springbootstarterlangchain4j.models.presets;
 
 import org.example.springbootstarterlangchain4j.config.LangChainDefaultsProperties;
 import org.example.springbootstarterlangchain4j.models.ModelPreset;
+import org.springframework.context.annotation.Primary;
+import org.springframework.stereotype.Component;
 
+@Component
+@Primary
 public class DefaultModelPreset implements ModelPreset {
 
     private final LangChainDefaultsProperties properties;

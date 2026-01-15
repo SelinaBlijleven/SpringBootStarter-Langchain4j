@@ -9,22 +9,12 @@ package org.example.springbootstarterlangchain4j.config;
 
 import dev.langchain4j.model.chat.ChatModel;
 import org.example.springbootstarterlangchain4j.models.ChatModelFactory;
-import org.example.springbootstarterlangchain4j.models.presets.DefaultModelPreset;
 import org.example.springbootstarterlangchain4j.models.ModelPreset;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class LangChainConfig {
-
-    /**
-     * Create a model preset from application defaults; this is used
-     * for constructing the model later.
-     */
-    @Bean
-    public ModelPreset defaultModelPreset(LangChainDefaultsProperties properties) {
-        return new DefaultModelPreset(properties);
-    }
 
     /**
      * Return a default model based on the application default settings.
