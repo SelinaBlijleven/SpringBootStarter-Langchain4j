@@ -6,3 +6,7 @@ Accept: text/plain
 ### Call /model using default message
 GET http://localhost:8080/model
 Accept: text/plain
+
+### Call /groupchat using a dumb idea
+GET http://localhost:8080/groupchat?message="I want to create my own jetpack for cats."
+Accept: text/plain
