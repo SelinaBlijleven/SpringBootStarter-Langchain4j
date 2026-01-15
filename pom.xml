@@ -37,20 +37,21 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
+        <!-- LangChain4j core -->
         <dependency>
             <groupId>dev.langchain4j</groupId>
             <artifactId>langchain4j</artifactId>
             <version>1.10.0</version>
         </dependency>
 
-        <!-- LangChain4j Ollama integration (brings core transitively) -->
+        <!-- LangChain4j Ollama integration (local LLM) -->
         <dependency>
             <groupId>dev.langchain4j</groupId>
             <artifactId>langchain4j-ollama</artifactId>
             <version>1.10.0</version>
         </dependency>
 
-        <!-- LangChain4j Mistral integration -->
+        <!-- LangChain4j Mistral API integration -->
         <dependency>
             <groupId>dev.langchain4j</groupId>
             <artifactId>langchain4j-mistral-ai</artifactId>
