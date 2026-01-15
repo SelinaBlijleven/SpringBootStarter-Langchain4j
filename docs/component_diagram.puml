@@ -1,0 +1,44 @@
+@startuml
+skinparam componentStyle rectangle
+
+package "Presentation Layer" {
+    component "CLI / Web UI" as UI
+}
+
+package "Application Layer" {
+    component "GroupChatController" as GCC
+    component "GroupChatService" as GCS
+}
+
+package "Domain Layer" {
+    component "ChatAgent (interface)" as CA
+    component "PlannerAgent" as PA
+    component "CriticAgent" as CR
+    component "ExecutorAgent" as EX
+}
+
+package "Integration Layer" {
+    component "LLMAdapter" as LLM
+    component "LangChain4j API" as LC
+}
+
+package "Infrastructure Layer" {
+    component "Ollama Runtime" as OR
+    component "Local LLM Model" as LLMODEL
+}
+
+' Dependencies
+UI --> GCC
+GCC --> GCS
+
+GCS --> CA
+CA <|-- PA
+CA <|-- CR
+CA <|-- EX
+
+CA --> LLM
+LLM --> LC
+LC --> OR
+OR --> LLMODEL
+
+@enduml
