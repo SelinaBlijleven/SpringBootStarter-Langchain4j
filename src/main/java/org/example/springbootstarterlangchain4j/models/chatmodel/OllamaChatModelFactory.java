@@ -12,7 +12,6 @@ import dev.langchain4j.model.ollama.OllamaChatModel;
 import org.example.springbootstarterlangchain4j.config.providers.OllamaDefaultsProperties;
 import org.example.springbootstarterlangchain4j.models.ChatModelFactory;
 import org.example.springbootstarterlangchain4j.models.ModelPreset;
-import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 @Component
