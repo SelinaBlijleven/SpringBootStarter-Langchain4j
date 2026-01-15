@@ -3,7 +3,8 @@
  * <p>
  * We create several model presets to easily work with different LLMs,
  * who might have different tasks and parameters. This class contains
- * the information we need for each model.
+ * the information we need for every model. More specific set-up for
+ * different providers can be found in the 'config' folder.
  */
 package org.example.springbootstarterlangchain4j.models;
 
@@ -13,16 +14,16 @@ import java.util.Objects;
 
 public interface ModelPreset {
 
+    // Each LLM is given a name/role to identify it by
     String name();
 
-    String baseUrl();
-
+    // Each LLM needs a system prompt specific to its personality/role
     String systemPrompt();
 
-    String modelName();
-
+    // The temperature we want to use for the model
     double temperature();
 
+    // Helper method to load the prompt from .txt
     default String loadPrompt(String resourcePath) {
         try {
             return Files.readString(

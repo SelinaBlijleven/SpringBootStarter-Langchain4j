@@ -17,15 +17,6 @@ public class DefaultModelPreset implements ModelPreset {
         return "DefaultModel";
     }
 
-    public String baseUrl() {
-        return properties.getBaseUrl();
-    }
-
-    @Override
-    public String modelName() {
-        return properties.getModelName();
-    }
-
     @Override
     public double temperature() {
         return properties.getTemperature();

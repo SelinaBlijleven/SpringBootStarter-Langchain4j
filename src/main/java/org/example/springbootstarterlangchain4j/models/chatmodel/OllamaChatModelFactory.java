@@ -9,12 +9,20 @@ package org.example.springbootstarterlangchain4j.models.chatmodel;
 
 import dev.langchain4j.model.chat.ChatModel;
 import dev.langchain4j.model.ollama.OllamaChatModel;
+import org.example.springbootstarterlangchain4j.config.providers.OllamaDefaultsProperties;
 import org.example.springbootstarterlangchain4j.models.ChatModelFactory;
 import org.example.springbootstarterlangchain4j.models.ModelPreset;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 @Component
 public class OllamaChatModelFactory implements ChatModelFactory {
+
+    private final OllamaDefaultsProperties ollamaDefaults;
+
+    public OllamaChatModelFactory(OllamaDefaultsProperties ollama) {
+        this.ollamaDefaults = ollama;
+    }
 
     /**
      * The create method for Ollama uses the OllamaChatModel,
@@ -26,7 +34,7 @@ public class OllamaChatModelFactory implements ChatModelFactory {
     @Override
     public ChatModel create(ModelPreset preset) {
         return OllamaChatModel.builder()
-                .modelName(preset.modelName())
+                .modelName(ollamaDefaults.getModelName())
                 .temperature(preset.temperature())
                 .build();
     }

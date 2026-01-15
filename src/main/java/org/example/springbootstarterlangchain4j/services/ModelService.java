@@ -5,8 +5,5 @@
  */
 package org.example.springbootstarterlangchain4j.services;
 
-import org.springframework.stereotype.Service;
-
-@Service
 class ModelService {
 }

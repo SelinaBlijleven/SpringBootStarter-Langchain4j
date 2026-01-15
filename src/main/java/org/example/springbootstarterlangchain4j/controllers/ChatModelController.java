@@ -1,6 +1,6 @@
 package org.example.springbootstarterlangchain4j.controllers;
 
-import org.example.springbootstarterlangchain4j.services.OllamaChatModelService;
+import org.example.springbootstarterlangchain4j.services.ChatModelService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -8,16 +8,16 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ChatModelController {
 
-    private final OllamaChatModelService ollamaChatModelService;
+    private final ChatModelService chatModelService;
 
-    public ChatModelController(OllamaChatModelService ollamaChatModelService) {
-        this.ollamaChatModelService = ollamaChatModelService;
+    public ChatModelController(ChatModelService chatModelService) {
+        this.chatModelService = chatModelService;
     }
 
     @GetMapping("/model")
     public String model(
             @RequestParam(value = "message", defaultValue = "Hello") String message
     ) {
-        return ollamaChatModelService.chat(message);
+        return chatModelService.chat(message);
     }
 }
