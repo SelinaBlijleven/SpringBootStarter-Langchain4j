@@ -15,6 +15,7 @@ import org.springframework.context.annotation.Primary;
 @Configuration
 @Primary
 @ConfigurationProperties(prefix = "mistral.defaults")
+// Create a getter and setter for every property with Lombok
 @Getter
 @Setter
 public class MistralDefaultsProperties {
