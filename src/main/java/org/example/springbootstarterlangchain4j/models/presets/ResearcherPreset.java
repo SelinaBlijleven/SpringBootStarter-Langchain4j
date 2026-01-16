@@ -28,4 +28,14 @@ public class ResearcherPreset extends DefaultModelPreset {
     public String name() {
         return "Researcher";
     }
+
+    /**
+     * Researcher uses a very low temperature for the most reliable
+     * answers.
+     * @return  LLM temperature
+     */
+    @Override
+    public double temperature() {
+        return 0.1;
+    }
 }
