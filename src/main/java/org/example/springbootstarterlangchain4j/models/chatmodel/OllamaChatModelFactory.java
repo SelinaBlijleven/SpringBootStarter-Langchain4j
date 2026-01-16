@@ -33,6 +33,7 @@ public class OllamaChatModelFactory implements ChatModelFactory {
     @Override
     public ChatModel create(ModelPreset preset) {
         return OllamaChatModel.builder()
+                .baseUrl(ollamaDefaults.getBaseUrl())
                 .modelName(ollamaDefaults.getModelName())
                 .temperature(preset.temperature())
                 .build();
