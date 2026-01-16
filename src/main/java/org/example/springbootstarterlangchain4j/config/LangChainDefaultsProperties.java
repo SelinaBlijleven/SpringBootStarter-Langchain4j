@@ -27,4 +27,5 @@ public class LangChainDefaultsProperties {
     private String name = "ApplicationDefaultModel";
     private double temperature;
     private String systemPrompt;
+    private String provider;
 }

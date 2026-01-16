@@ -8,22 +8,31 @@
 package org.example.springbootstarterlangchain4j.config;
 
 import dev.langchain4j.model.chat.ChatModel;
-import org.example.springbootstarterlangchain4j.models.ChatModelFactory;
 import org.example.springbootstarterlangchain4j.models.ModelPreset;
+import org.example.springbootstarterlangchain4j.models.chatmodel.MistralChatModelFactory;
+import org.example.springbootstarterlangchain4j.models.chatmodel.OllamaChatModelFactory;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class LangChainConfig {
 
-    /**
-     * Return a default model based on the application default settings.
-     * Since we have implemented a ChatModel factory interface, we can
-     * treat each provider the same.
-     */
     @Bean
-    ChatModel defaultModel(ChatModelFactory factory, ModelPreset preset) {
-        // Use the ChatModel factory to create the default model
+    @ConditionalOnProperty(
+            name = "langchain4j.defaults.provider",
+            havingValue = "ollama"
+    )
+    public ChatModel ollamaModel(OllamaChatModelFactory factory, ModelPreset preset) {
+        return factory.create(preset);
+    }
+
+    @Bean
+    @ConditionalOnProperty(
+            name = "langchain4j.defaults.provider",
+            havingValue = "mistral"
+    )
+    public ChatModel mistralModel(MistralChatModelFactory factory, ModelPreset preset) {
         return factory.create(preset);
     }
 }
