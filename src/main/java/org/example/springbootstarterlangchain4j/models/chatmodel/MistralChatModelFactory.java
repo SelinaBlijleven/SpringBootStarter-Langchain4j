@@ -13,11 +13,9 @@ import org.example.springbootstarterlangchain4j.config.providers.MistralDefaults
 import org.example.springbootstarterlangchain4j.models.ChatModelFactory;
 import org.example.springbootstarterlangchain4j.config.LangChainDefaultsProperties;
 import org.example.springbootstarterlangchain4j.models.ModelPreset;
-import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 @Component
-@Primary
 public class MistralChatModelFactory implements ChatModelFactory {
 
     private final MistralDefaultsProperties providerDefaults;

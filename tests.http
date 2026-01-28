@@ -1,5 +1,5 @@
 ### Call /model with explicit message
-GET http://localhost:8080/model?message=Hello
+GET http://localhost:8080/model?message="Hello who are you my friend?"
 Accept: text/plain
 
 ### Call /model using default message
